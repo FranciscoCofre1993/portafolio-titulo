@@ -1,0 +1,92 @@
+<ion-content>
+  <div class="content">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <br />
+    <div class="fondo">
+    <div style="display: flex;">
+      <div>
+      <ion-button fill="clear" style="width: 70px; height: 70px; " (click)="backBtn()">
+        <ion-icon name="close-outline" color="dark"  style="width: 100%; height: 100%;"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div style="margin-left: auto; align-self: center;" (click)="marcarFav()" *ngIf="selectedLocal">
+      <ion-button fill="clear" style="width: 70px; height: 70px;">
+        <ion-icon name="heart-outline" color="dark"  style="width: 100%; height: 100%; justify-content: flex-end; filter: drop-shadow(5px 5px 5px rgb(99, 99, 99));" *ngIf="!esFavorito"></ion-icon>
+        <ion-icon name="heart"  style="width: 50px; height: 50px; margin: auto; color: rgb(235, 0, 0); filter: drop-shadow(5px 5px 5px rgb(99, 99, 99));" *ngIf="esFavorito"></ion-icon>
+      </ion-button>
+    </div>
+    </div>
+
+      <div style="display: flex;">
+        <div style="margin: auto;" (click)="calificacion()">
+          <ion-rating-stars
+            [rating]=calificacionTotal
+            [color]="'darkgrey'" [filledColor]="'orange'" [margin]="2" [size]="40" [disabled]="true"
+            [opacity]="0.5" [isHalfStar]="true" style="filter: drop-shadow(5px 5px 5px rgb(99, 99, 99));"></ion-rating-stars> 
+        </div>
+      </div>
+
+      
+    <div class="card">
+      <div class="card-top">
+        <h2 class="titulo2">{{selectedLocal.nombre}}</h2>
+        <div class="divider"></div>
+        <br>
+
+          <mat-carousel
+          [loop]="true"
+          [hideArrows]="false"
+          [maintainAspectRatio]="false" 
+          style="height: 200px;"
+        >
+          <mat-carousel-slide
+            *ngFor="let imagen of selectedLocal.imagenes; let i = index"
+            image={{imagen.imagen}}
+          >
+           
+          </mat-carousel-slide>
+        </mat-carousel>
+           
+
+        <br>
+        <h1 class="subtitulo">{{selectedLocal.direccion}}</h1>
+        <br>
+        <p class="descripcion"> {{selectedLocal.descripcion}} </p>
+      </div>
+
+      
+    
+    <div class="divider"></div>
+
+    <div style="display: flex; margin-bottom: 15px;">
+      <div class="titulo"><h1>Productos</h1></div>
+
+    <div style="margin-left: auto;" (click)="descargarMenu()" *ngIf="lstProductos.length > 0">
+      <ion-button fill="clear">
+      
+      Descargar Menú</ion-button>
+    </div>
+    </div>
+    
+    <div class="card-bottom">
+      <mat-card class="card-producto" *ngFor="let item of lstProductos">
+        <div (click)="detalleProducto(item)">
+          <img mat-card-image [src]="item.imagen">
+          <mat-card-header>
+            <mat-card-title class="descripcion2" style="color: black; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 130px;">
+              {{item.nombre}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h2 style="color: black; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 130px;">$ {{item.precio | number}}</h2>
+          </mat-card-content>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

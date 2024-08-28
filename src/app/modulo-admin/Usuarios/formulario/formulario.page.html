@@ -1,0 +1,119 @@
+<ion-content class="content">
+  <div class="header">
+  </div>
+  <div class="fondo">
+    <br />
+    <div class="titulo">
+      <h1 style="color: #000">REGISTRAR NUEVO USUARIO</h1>
+    </div>
+
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Información personal</ng-template>
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Nombre</mat-label>
+            <input matInput type="text" formControlName="nombre" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Correo</mat-label>
+            <input matInput type="text" formControlName="correo" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Numero Telefono</mat-label>
+            <input matInput type="number" formControlName="telefono" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div class="buttonbox">
+      <button mat-stroked-button matStepperNext class="botonSiguiente">Siguiente</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Datos de Usuario</ng-template>
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Nombre de Usuario</mat-label>
+            <input matInput type="text" formControlName="usuario" />
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"/>
+            <button mat-icon-button matSuffix (click)="esconderPass($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label class="matLabel">Repetir Contraseña</mat-label>
+            <input matInput [type]="hidevl ? 'password' : 'text'" formControlName="vlpass"/>
+            <button mat-icon-button matSuffix (click)="esconderPassVl($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidevl">
+              <mat-icon>{{hidevl ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field class="matFormField" floatLabel="always">
+            <mat-label>Tipo perfil de usuario</mat-label>
+            <mat-select
+            formControlName="perfil"
+            >
+              <mat-option
+                *ngFor="let option of lstPerfiles"
+                [value]="option.id"
+              >
+                {{ option.nombre }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div class="buttonbox">
+      <button mat-stroked-button matStepperPrevious>Anterior</button>
+      <button mat-stroked-button matStepperNext class="botonSiguiente1">Siguiente</button>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Confirmación</ng-template>
+    <p style="color:black">¿Está seguro de que desea enviar esta información?</p>
+    <div class="buttonbox">
+      <button mat-stroked-button matStepperPrevious>Anterior</button>
+      <button mat-stroked-button class="botonAceptar" (click)="Agregar()">Agregar</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" (click)="goBack()">Cancelar</ion-button>
+    </div>
+  </div>
+</ion-content>

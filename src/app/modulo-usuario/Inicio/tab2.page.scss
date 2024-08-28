@@ -1,0 +1,138 @@
+.content{
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url(../../../assets/background/bgfondo.jpg) !important;
+    min-height: 100%;
+  }
+  
+  .fondo {
+      width: 100%;
+      min-height: 75%;
+      border-radius: 35px 35px 0px 0px;
+      position: relative; 
+      margin: auto;
+      padding: 20px;
+      background-color: #ffffff2f;
+  }
+  
+  .titulo{
+    color: black; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 500; 
+    font-size: xx-large; 
+    text-align: center;
+  }
+  
+  h1{
+    font-size: 24px;
+  }
+  
+  .card{
+    overflow: hidden;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.541));
+  }
+  
+  .card-image {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .img {
+      border-radius: 16px;
+  }
+      
+  .content-container {
+      display: flex;
+      align-items: center; 
+      width: 100%;
+    }
+    
+  .content-left {
+      flex-grow: 1;
+    }
+    
+  .divider {
+      width: 1px;
+      height: 50px; 
+      background-color: black; 
+      margin-right: 25px;
+    }
+
+    .buttonNavigation ion-icon{
+        width: 50px; 
+        height: 50px;
+      }
+    
+  .content-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      justify-content: flex-end;
+     
+    }
+    
+  .descripcion {
+      max-width: 200px;
+      max-height: 3.6em; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.8; 
+      white-space: nowrap;
+      color: black
+    }
+  
+  @media (max-width: 768px) {
+      .card-content {
+          flex-direction: column;
+          align-items: stretch;
+          position:relative;
+      }
+      .card-image {
+          justify-content: center;
+          margin-bottom: 10px;
+      }
+      .content-left {
+          padding-right: 0;
+          width: 100%;
+      }
+      .divider {
+          width: 1px;
+          height: 50px; 
+          background-color: black; 
+          margin: 25px;
+        }
+      .content-right {
+          width: 100%;
+          justify-content: flex-end;
+          left: 0%;
+          position: absolute;
+      }
+      .descripcion {
+          max-width: 200px;
+          max-height: 3.6em; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.8; 
+          white-space: nowrap;
+          color: black
+        }
+  }
+  
+  ion-searchbar.custom {
+    --background: #ffffff;
+    --color: #000000;
+    --placeholder-color: #000000;
+    --icon-color: #000000;
+    --clear-button-color: #737373;
+    --border-radius: 30px;
+  }
+
+  
+  
+  

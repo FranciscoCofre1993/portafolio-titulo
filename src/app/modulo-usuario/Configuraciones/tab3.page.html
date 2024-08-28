@@ -1,0 +1,75 @@
+<ion-content>
+  
+  <div style="display: flex;" *ngIf="datosUsuario.perfil != 0">
+  <div style=" margin-left: auto; margin-top: 30px;">
+    <ion-button class="btnSettings" fill="clear" size="small" shape="round" [routerLink]="['/tabs/editar-usuario']">
+      <ion-icon name="settings-sharp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+<div style="margin: auto; width: 250px; height: 250px;">
+  <ion-icon name="person-circle-outline" color="medium"  style="width: 100%; height: 100%;"></ion-icon>
+</div>
+<div *ngIf="datosUsuario.perfil != 0">
+  <div class="flex">
+    <h1 class="contenido" style="font-size: 33px;">{{datosUsuario?.nombre}}</h1>
+  </div>
+<div class="flex">
+  <h1 class="contenido">Usuario:</h1>
+</div>
+<div class="flex">
+  <h1 class="contenido" style="text-decoration: underline;">{{datosUsuario?.usuario}}</h1>
+</div>
+
+<div class="flex">
+  <h1 class="contenido" style="text-decoration: underline;">{{datosUsuario?.correo}}</h1>
+</div>
+
+<div class="flex" style="margin-top: 30px;">
+  <h1 class="contenido">Ver Favoritos</h1>
+</div>
+<div class="flex">
+  <ion-icon name="heart"  style="width: 50px; height: 50px; margin: auto; color: rgb(235, 0, 0);" (click)="verFavoritos()"></ion-icon>
+</div>
+
+
+<div *ngIf="datosUsuario.perfil == 4">
+<div class="flex" style="margin-top: 20px;">
+  <h1 class="contenido">Administrar mi local</h1>
+</div>
+
+<div class="flex">
+  <ion-icon name="pizza" style="width: 50px; height: 50px; margin: auto; color: rgb(212, 163, 3);" (click)="verLocal()"></ion-icon>
+</div>
+</div>
+
+
+  <div style="width: 80%; margin: auto;">
+    <ion-button expand="block" style="padding-top: 30px;"  (click)="ir()">
+    DESCONECTARSE
+    </ion-button>
+  </div>
+</div>
+
+<!-- INVITADO VISTA -->
+<div *ngIf="datosUsuario.perfil == 0">
+  <div class="flex">
+    <h1 class="contenido">Bienvenido Usuario Invitado, ¿Deseas crear una cuenta?</h1>
+  </div>
+
+  <div style="width: 80%; margin: auto; margin-top: 50%; color: black;">
+    <ion-button class="btnRegister" expand="block" style="padding-top: 30px;" color="success" (click)="registrar()">
+    REGISTRARSE
+    </ion-button>
+    </div>
+    
+    <div style="width: 80%; margin: auto;">
+    <ion-button expand="block" style="padding-top: 30px;"  (click)="ir()">
+    DESCONECTARSE
+    </ion-button>
+  </div>
+</div>
+
+
+</ion-content>

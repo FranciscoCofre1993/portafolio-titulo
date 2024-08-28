@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <div style="height: 220px; width: 220px; margin: auto; margin-top: 20px; margin-bottom: 30px;">
+    <img src="../../../assets/icon/favicon.png" alt="">
+  </div>
+  
+  <div>
+    <div style="margin: auto;"> 
+      <h1 style="color: black; text-align: center; font-size: xx-large;">Iniciar sesión</h1>
+    </div>
+    <form [formGroup]="frm">
+      <div class="flex">
+        <div class="contenido">
+          <mat-form-field floatLabel="always" style="width: 288px; filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));">
+            <mat-label style="margin-left: 96px">Nombre de Usuario</mat-label>
+            <input matInput type="text" style="appearance: textfield;"  formControlName="usuario" (keyup.enter)="login()">
+          </mat-form-field>
+        </div>
+        </div>
+      
+        <div class="flex">
+          <div class="contenido">
+            <mat-form-field floatLabel="always" style="width: 288px; filter: drop-shadow(5px 5px 5px rgb(139, 139, 139))">
+              <mat-label style="margin-left: 126px;">Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" (keyup.enter)="login()">
+              <button mat-icon-button matSuffix (click)="esconderPass($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+      </div>
+    </form>
+
+<div style="width: 80%; margin: auto;">
+  <ion-button color="dark" expand="block" style="padding-top: 10px;" (click)="login()">
+  Ingresar
+  </ion-button>
+  </div>
+
+  <div style="margin: auto;"> 
+    <h3 style="color: black; text-align: center; font-size: large;">- O -</h3>
+  </div>
+
+  <div style="width: 80%; margin: auto;">
+    <ion-button color="warning" expand="block" style="padding-top: 10px;" (click)="openDialog()">
+    Ingresar como Invitado
+    </ion-button>
+    </div>
+
+  <div style="width: 80%; margin: auto;">
+    <ion-button class="btnRegister" color="success" expand="block" style="padding-top: 10px;" (click)="ir()">
+    Registrarse
+    </ion-button>
+    </div>
+</div>
+</ion-content>

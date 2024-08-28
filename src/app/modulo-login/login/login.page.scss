@@ -1,0 +1,32 @@
+ion-content{
+    --ion-background-color:#ffff ;
+}
+.contenido{
+    color: black; 
+    margin: auto; 
+    margin-top: 10px;
+    
+}
+
+input .contenido::-webkit-outer-spin-button,
+input .contenido::-webkit-inner-spin-button {
+    display: none;
+}
+
+.flex{
+    display:flex;
+}
+
+.btnRegister::part(native){
+    color: black;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  border-radius: 50px !important;
+}
+
+ion-button{
+    --border-radius: 50px;
+    filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));
+}
+

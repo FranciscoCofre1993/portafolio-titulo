@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="content">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br>
+    <div style="width: 80%; margin: auto">
+      <ion-button
+        expand="block" color="light" shape="round" style="padding-top: 30px" mat-raised-button (click)="openDialog()">
+        <ion-icon slot="start" name="search"></ion-icon>
+        Comienza a buscar!
+      </ion-button>
+    </div>
+    <br />
+    <div class="fondo">
+      <div class="titulo">
+        <h1 style="color: #ffffff">LOCALES DE COMIDA</h1>
+        <mat-divider style="background-color:rgba(255, 255, 255, 0.295); width: 50%; margin: auto;"></mat-divider>
+      </div>
+
+      <div class="card">
+        <mat-card *ngFor="let item of lstLocales" style="margin-bottom: 10px">
+          <div style="display: flex; align-items: stretch">
+            <div>
+              <mat-card-header class="card-img">
+                <div *ngFor="let imagen of item.imagenes">
+                  <div *ngIf="imagen.principal">
+                    <img class="img" [src]="imagen.imagen" (click)="detalle(item)"/>
+                  </div>
+                </div>
+              </mat-card-header>
+
+              <mat-card-content class="content-container">
+                <div class="content-left">
+                  <mat-card-title style="color: black">
+                    {{item.nombre}}
+                  </mat-card-title>
+                  <div>
+                    <p class="descripcion">{{ item.descripcion }}</p>
+                  </div>
+                </div>
+
+                <div class="content-right">
+                  <div class="divider"></div>
+                  <div class="buttonNavigation" (click)="marcarRuta(item)">
+                    <ion-button fill="clear">
+                      <ion-icon
+                        name="navigate-circle-outline"
+                        color="dark"
+                      ></ion-icon>
+                    </ion-button>
+                  </div>
+                </div>
+              </mat-card-content>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

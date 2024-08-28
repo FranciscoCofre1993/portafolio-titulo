@@ -1,0 +1,92 @@
+<ion-content class="content">
+  <div class="header">
+  </div>
+  <div class="fondo">
+    <br />
+    <div class="titulo">
+      <h1 style="color: #000">MODIFICAR PRODUCTO</h1>
+    </div>
+
+    <mat-tab-group>
+  <form (ngSubmit)="onSubmit()">
+    <mat-tab label="Datos"> 
+      <br>
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <label class="matLabel" position="floating">Nombre del Producto: </label>
+          <input matInput [(ngModel)]="producto.nombre" name="nombre" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <label class="matLabel" position="floating">Descripción: </label>
+          <textarea matInput [(ngModel)]="producto.descripcion" name="descripcion" type="text" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"> </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <label class="matLabel" position="floating">Precio: </label>
+          <input matInput [(ngModel)]="producto.precio" name="precio" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label>Tipo local</mat-label>
+          <mat-select [(ngModel)]="producto.tipo_producto"  name="tipo_producto">
+            <mat-option *ngFor="let option of lstTipProducto" [value]="option.id">
+              {{ option.nombre }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" [routerLink]="['/tabs/dueno-local/lista-productos']">Cancelar</ion-button>
+      <ion-button class="botonAceptar" color="tertiary" type="submit" (click)="onSubmit()">Actualizar</ion-button>
+    </div>
+  </mat-tab>
+    <mat-tab label="Imagenes"> 
+    <div class="flex">
+      <div class="contenido">
+        <label style="color:red">ADVERTENCIA!: </label>
+        <br>
+        <label style="color:red">Las imagenes eliminadas no se pueden recuperar.</label>
+        <br><br>
+        <label>Imagen del Producto: </label>
+        <div class="imgprev" *ngIf="!removeExistingImage && producto.imagen">
+            <img [src]="producto.imagen">
+            <ion-button color="danger" (click)="removeImage()">Eliminar Imagen</ion-button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="flex">
+      <div class="contenido">
+          <label for="fileInput" class="custom-file-upload">Nueva Imagen del Local:</label>
+          <input id="fileInput" type="file" accept="image/*" (change)="onFileSelected($event)" />
+          <div class="imgprev">
+            <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen seleccionada">
+          </div>
+      </div>
+    </div>
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" [routerLink]="['/tabs/dueno-local/lista-productos']">Cancelar</ion-button>
+      <ion-button class="botonAceptar" color="tertiary" type="submit" (click)="onSubmit()">Actualizar</ion-button>
+    </div>
+  </mat-tab>
+  </form>
+</mat-tab-group>
+  
+
+</div>
+</ion-content>

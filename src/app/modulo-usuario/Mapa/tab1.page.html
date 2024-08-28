@@ -1,0 +1,25 @@
+<!--CSS LEAFLET (MAPA)-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+<!--HASTA ACA-->
+<!--SCRIPT LEAFLET (MAPA)-->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+<!--HASTA ACA-->
+<ion-content>
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <br>
+  <div style="width: 80%; margin: auto;">
+    <ion-button expand="block" color="light" shape="round" style="padding-top: 30px;" mat-raised-button (click)="openDialog()">
+     <ion-icon slot="start" name="search"></ion-icon>
+    Comienza a buscar!
+    </ion-button>
+    </div>
+
+
+  <div id="map" style="height: 80%; width: 90%;  margin: auto; margin-top: 30px; border-radius: 15px;"></div>
+</ion-content>

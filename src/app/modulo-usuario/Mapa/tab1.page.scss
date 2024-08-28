@@ -1,0 +1,25 @@
+::ng-deep .leaflet-popup-content-wrapper, .leaflet-popup-tip{
+    background: linear-gradient(to right, #0e293b, #210836,)!important;
+    color: #fff!important;
+    width: 220px;
+    filter:drop-shadow(5px 5px 5px black);
+}
+
+::ng-deep .leaflet-popup-tip{
+    background: linear-gradient(to right, #0e293b, #210836,)!important;
+    color: #fff!important;
+    filter:drop-shadow(5px 5px 5px black);
+}
+
+// TEMA OSCURO
+  
+::ng-deep .leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(30deg) brightness(100%) contrast(95%);
+}
+
+.leaflet-container {
+    background: #00000095
+}

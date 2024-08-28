@@ -1,0 +1,62 @@
+.content{
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url(../../../assets/background/bgfondo.jpg) !important;
+    min-height: 100%;
+}
+
+.fondo {
+    width: 100%;
+    min-height: 75%;
+    border-radius: 35px 35px 0px 0px;
+    position: relative; 
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff2f;
+}
+
+.titulo{
+    color: black; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 500; 
+    font-size: xx-large; 
+    text-align: center;
+}
+  
+h1{
+    font-size: 24px;
+}
+
+.contenido{
+    overflow:scroll; 
+    height:50%;
+    border-radius: 15px;
+}
+
+.comentario{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.comentarioInv{    
+    background-color: #773dd4;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding-top: 5px;
+    color: #ffffff;
+}
+
+.registrarInv {
+    color: #ffffff; 
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.btn{
+    border-radius: 15px;
+}

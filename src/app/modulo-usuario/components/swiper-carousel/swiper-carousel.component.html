@@ -1,0 +1,16 @@
+      
+        <swiper [navigation]="true" [pagination]="{ clickable: true }" class="mySwiper">
+          <ng-template swiperSlide *ngFor="let imagen of imagenes">
+            <img class="img" [src]="imagen.imagen" />
+          </ng-template>
+        </swiper>
+     
+
+        <mat-card style="margin-bottom: 10px; width: 100%; margin: auto;">
+          <swiper [navigation]="true" [pagination]="{ clickable: true }" class="mySwiper">
+            <ng-template swiperSlide *ngFor="let imagen of selectedLocal.imagenes">
+              <img class="img" [src]="imagen.imagen" />
+            </ng-template>
+          </swiper>
+        </mat-card>
+  

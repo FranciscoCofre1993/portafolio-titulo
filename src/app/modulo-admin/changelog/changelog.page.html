@@ -1,0 +1,32 @@
+<!-- AGREGAR CIERRE DE SESION-->
+<ion-content>
+  <div class="center">
+    <h1 style="font-size: 45px; font-family: 
+    'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;">CHANGELOG</h1>
+  </div>
+
+  <div style="height: 80%; width: 90%; margin: auto; margin-top: 30px; border-radius: 15px;">
+    <mat-card *ngFor="let item of lstRegCambios" style="margin-bottom: 10px">
+      <div style="display: flex; align-items: stretch">
+        <div>
+          <mat-card-header>
+            <mat-card-title style="color: black;">
+              {{item.descripcion}}
+            </mat-card-title>
+          </mat-card-header>
+          <br/>
+          <mat-card-content style="color: black; width: 370px;">
+            {{ getUserNameById(item.usuario) }}
+            <mat-card-subtitle style="display:flex; justify-content: flex-end;">
+              <br />
+              {{ item.fecha | date: 'dd/MM/yyyy' }}
+              <br>
+              {{ item.fecha | date: 'HH:mm' }}
+            </mat-card-subtitle>
+          </mat-card-content>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</ion-content>

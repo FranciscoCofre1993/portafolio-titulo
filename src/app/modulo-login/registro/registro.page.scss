@@ -1,0 +1,18 @@
+ion-content{
+    --ion-background-color:#ffff ;
+}
+.contenido{
+    color: black; 
+    margin: auto; 
+    margin-top: 10px;
+    
+}
+.flex{
+    display:flex;
+}
+
+.matFormField
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    border-radius: 50px !important;
+    width: 288px; filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));
+  }

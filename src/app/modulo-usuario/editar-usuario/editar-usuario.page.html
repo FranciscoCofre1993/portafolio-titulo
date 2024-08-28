@@ -1,0 +1,72 @@
+<ion-content class="content">
+  <div class="header">
+  </div>
+  <div class="fondo">
+    <br />
+    <div class="titulo">
+      <h1>MODIFICAR USUARIO</h1>
+    </div>
+
+  <form (ngSubmit)="onSubmit()">
+    <br>
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Nombre: </mat-label>
+          <input matInput [(ngModel)]="usuario.nombre" name="nombre" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Correo: </mat-label>
+          <input matInput type="email" [(ngModel)]="usuario.correo" name="correo" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Telefono: </mat-label>
+          <input matInput type="number" [(ngModel)]="usuario.telefono" name="telefono" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Usuario: </mat-label>
+          <input matInput [(ngModel)]="usuario.usuario" name="usuario" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Conttraseña: </mat-label>
+          <input matInput [(ngModel)]="usuario.contrasenna" name="password" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex" style="padding-top: 20px;">
+      <div class="contenido">
+        <mat-slide-toggle  [(ngModel)]="isDuenoLocal" [ngModelOptions]="{standalone: true}" labelPosition="before">Dueño de local:  </mat-slide-toggle>
+      </div>
+    </div>
+
+
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" (click)="goBack()">Cancelar</ion-button>
+      <ion-button class="botonAceptar" color="tertiary" type="submit" (click)="onSubmit()">Actualizar</ion-button>
+    </div>
+
+  </form>
+
+</div>
+</ion-content>

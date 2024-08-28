@@ -1,0 +1,90 @@
+<ion-content [class.fab-open]="fabOpen">
+  <div class="content">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <br>
+  <div style="width: 80%; margin: auto; margin-bottom: 20px;">
+<div style="padding-top : 30px;">
+    <ion-searchbar
+    class="custom"
+    expand="block"
+      color="light"
+      placeholder="Buscar local: "
+      mat-raised-button
+      (ionInput)="InputBuscador($event)"
+      ></ion-searchbar>
+    </div>
+  </div>
+
+  <div class="fondo">
+    <div class="titulo">
+      <h1 style="color: #ffffff">LOCALES DE COMIDA</h1>
+      <mat-divider style="background-color:rgba(255, 255, 255, 0.295); width: 50%; margin: auto;"></mat-divider>
+    </div>
+
+    <div class="card">
+      <mat-card *ngFor="let item of lstLocales" style="margin-bottom: 10px">
+        <div style="display: flex; align-items: stretch">
+          <button (click)="openConfirmationDialog(item, $event)">
+            <ion-icon id="btnEliminar" name="trash" *ngIf="showDeleteButtons" style="color: #ffffff;">Eliminar</ion-icon>
+          </button>
+          <button (click)="detalle2(item)">
+            <ion-icon id="btnAgregarProducto" name="fast-food-outline" *ngIf="showAddButtons" style="color: #ffffff;">Agregar Producto</ion-icon>
+          </button>
+            <div>
+            <mat-card-header class="card-img">
+              <div *ngFor="let imagen of item.imagenes">
+                <div *ngIf="imagen.principal">
+                  <img class="img" [src]="imagen.imagen" />
+                </div>
+              </div>
+            </mat-card-header>
+            <div class="infoLocal">
+              <mat-card-content class="content-container">
+                <div class="content-left">
+                  <mat-card-title style="color: black">
+                    {{item.nombre}}
+                  </mat-card-title>
+                  <br />
+                  <div>
+                    <p class="descripcion">{{ item.descripcion }}</p>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <div class="divider"></div>
+                  <button
+                    mat-icon-button
+                    class="rounded-button"
+                    (click)="detalle(item)"
+                  >
+                    <mat-icon class="IrDetalle" style="color: white;">keyboard_arrow_right</mat-icon>
+                  </button>
+                </div>
+              </mat-card-content>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+  <!-- FAB -->
+  <div class="app-backdrop" [class.show]="fabOpen"></div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start" (click)="toggleFab()">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="ellipsis-vertical"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top" [class.fab-list-open]="fabOpen">
+      <ion-fab-button color="tertiary" (click)="goAgregarLocal()" data-desc="Agregar Local" style="margin-top: 10px;">
+        <ion-icon name="add" color="light"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="tertiary" (click)="toggleAllAddButtons()" data-desc="Lista Productos" style="margin-top: 10px;">
+        <ion-icon name="fast-food" color="light"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="tertiary" (click)="toggleAllDeleteButtons()" data-desc="Eliminar Local" style="margin-top: 10px;">
+        <ion-icon name="trash" color="light"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

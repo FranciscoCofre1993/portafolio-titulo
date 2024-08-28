@@ -1,0 +1,119 @@
+.content{
+  background-size: 100% 100%;
+  background-position: center;
+  background-image: url(../../../assets/background/bgfondo.jpg) !important;
+  min-height: 100%;
+}
+
+.fondo {
+    width: 100%;
+    min-height: 75%;
+    border-radius: 35px 35px 0px 0px;
+    position: relative; 
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 70px;
+    color: black;
+}
+
+.titulo{
+    display: flex;
+    padding-top: 10px;
+    font-size: xx-large;
+}
+
+.titulo2{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.subtitulo{
+    display: flex;
+    padding-top: 20px;
+    font-size: large;
+    padding: 5%;
+}
+
+.producto{
+    color: black;
+    text-align: left;
+    padding-top: 20px;
+    padding: 5%;
+}
+
+.card-img {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  min-width: 340px;
+  min-height: 200px;
+}
+
+.img { 
+  border-radius: 16px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  filter: drop-shadow(5px 5px 5px rgba(95, 95, 95, 0.541));
+  padding: 5%;
+}
+
+.card-top {
+  flex-direction: column;
+  display: flex;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.card-bottom {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  justify-content: space-between;
+}
+
+.divider {
+  width: 310px;
+  height: 1px; 
+  background-color: black; 
+  margin: auto;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.card-producto{
+  width: 155px;
+  flex: 1 1 calc(50% - 10px); 
+  box-sizing: border-box;
+}
+
+.card-bottom .card-producto:nth-last-child(1):nth-child(odd) {
+  grid-column: span 2;
+ }
+
+ .descripcion {
+  overflow-wrap: break-word;
+  max-width: 300px;
+  white-space: normal;
+  color: black;
+  margin-bottom: auto;
+}
+
+mat-carousel{
+  height: 400px;
+  min-width: 340px;
+  min-height: 200px;
+}
+

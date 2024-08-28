@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="SplashBTB" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowSplashScreenBackground">@color/ic_launcher_background</item>
+    <item name="android:windowBackground">@color/ic_launcher_background</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/btb</item>
+    <item name="android:windowSplashScreenAnimationDuration">1000</item>
+    <item name="postSplashScreenTheme">@style/AppTheme</item>
+  </style>
+</resources>

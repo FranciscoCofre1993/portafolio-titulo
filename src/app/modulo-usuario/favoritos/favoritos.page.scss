@@ -1,0 +1,28 @@
+.content{
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url(../../../assets/background/bgfondo.jpg) !important;
+    min-height: 100%;
+  }
+  
+  .fondo {
+    width: 100%;
+    min-height: 75%;
+    border-radius: 35px 35px 0px 0px;
+    position: relative; 
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff00;
+    color: black;
+}
+
+.custom-table {
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+.titulo{
+    color: black;
+    text-align: center;
+    font-size: xx-large;
+}

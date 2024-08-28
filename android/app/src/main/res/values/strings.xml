@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">BuscaTuBajón</string>
+    <string name="title_activity_main">BuscaTuBajón</string>
+    <string name="package_name">com.buscatubajon.cl</string>
+    <string name="custom_url_scheme">com.buscatubajon.cl</string>
+</resources>

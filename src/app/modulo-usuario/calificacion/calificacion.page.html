@@ -1,0 +1,87 @@
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <br />
+
+    <div class="fondo">
+      <div>
+        <ion-button fill="clear" style="width: 70px; height: 70px; " (click)="backBtn()">
+          <ion-icon name="close-outline" color="light" style="width: 100%; height: 100%;"></ion-icon>
+        </ion-button>
+      </div>
+      <div style="display: flex;">
+        <div style="margin: auto;">
+          <ion-rating-stars
+          [rating]=calificacionTotal
+          [color]="'darkgrey'"
+          [filledColor]="'orange'"
+          [margin]="2"
+          [size]="40"
+          [disabled]="true"
+          [opacity]="1"
+          [isHalfStar]="true"
+          ></ion-rating-stars> 
+        </div>
+      </div>
+        <h1 class="titulo" style="color: white;">Calificación de local</h1>
+        <h3 class="titulo" style="color: white;"> {{ selectedLocal.nombre }}  </h3>
+        
+    
+      <!--FORM -->
+      <div class="comentarioInv" *ngIf="datosUsuario.perfil == 0">
+        <h5>Para hacer una reseña, debes tener una cuenta.</h5> <h5 class="registrarInv" (click)="irARegistro()">Registrate aquí.</h5>
+      </div>
+
+      <div class="comentario" *ngIf="datosUsuario.perfil != 0">
+        <div style="margin-top: 20px; margin-left: 10px; padding-top: 20px;">
+          <ion-rating-stars
+            [rating]=calificacionForm
+            [color]="'darkgrey'"
+            [filledColor]="'orange'"
+            [margin]="2"
+            [size]="30"
+            [disabled]="false"
+            [opacity]="0.5"
+            [isHalfStar]="false"
+            (ratingChange)="changeRating($event)"
+            ></ion-rating-stars> 
+        </div>
+        <div style="display: flex;">
+          <div class="contenido" style="width: 90%; margin: auto;">
+            <mat-form-field style="width: 100%;">
+              <mat-label>Comentario</mat-label>
+              <textarea matInput placeholder="El local era ..." [(ngModel)]="comentario"></textarea>
+                <ion-button class="btn" color="tertiary" expand="block" style="padding-top: 5px;"  (click)="guardarCalificacion()">
+                  Calificar local
+                </ion-button>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido">
+        <mat-card *ngFor="let item of lstCalificacion" style="margin-bottom: 10px;" >
+          <mat-card-header>
+            <mat-card-title style="color: black;"> <ion-rating-stars
+              [rating]=item.estrellas
+              [color]="'darkgrey'"
+              [filledColor]="'orange'"
+              [margin]="2"
+              [size]="30"
+              [disabled]="true"
+              [opacity]="0.7"
+              [isHalfStar]="false"
+              ></ion-rating-stars>  </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h4 style="color: black;">{{ getUserNameById(item.usuario) }}</h4> 
+            <mat-card-subtitle style="text-align: justify;"> {{item.comentario}} </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

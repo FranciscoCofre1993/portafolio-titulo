@@ -1,0 +1,78 @@
+<div style="display: flex;">
+  <button mat-icon-button mat-dialog-close style="margin-top: 5px;">
+    <mat-icon style="color: black;">arrow_back</mat-icon>
+  </button>
+  <h1 mat-dialog-title style="margin-bottom: -0.3px; left: 20%;" *ngIf="paginaActual=='/tabs/tab1'">Filtros</h1>
+  <h1 mat-dialog-title style="margin-bottom: -0.3px; left: 15%;" *ngIf="paginaActual=='/tabs/tab2'">Filtros</h1>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+
+  <div *ngIf="paginaActual=='/tabs/tab1'">
+    <div class="flex">
+      <div class="contenido" style="width: 90%; margin-bottom: 20px;">
+        <mat-label style="margin-right: 20px">Rango de Búsqueda</mat-label>
+        <mat-slider min="1" max="5" step="1" showTickMarks discrete [displayWith]="formatLabel" #rango (input)="setRango($event)">
+          <div *ngIf="filtrosStorage">
+            <input matSliderThumb value="{{ filtrosStorage.rango }}" />
+          </div>
+          <div *ngIf="!filtrosStorage">
+            <input matSliderThumb />
+          </div>
+        </mat-slider>
+      </div>
+    </div>  
+    <mat-divider></mat-divider>
+  </div>
+
+
+  <div class="flex">
+    <div class="contenido" style="width: 100%; margin-bottom: 20px;">
+      <mat-label style="margin-bottom: 10px;">Tipo de Producto</mat-label>
+    <mat-select [(ngModel)]="tipo_producto" name="Tipo Productos">
+      <div *ngFor="let tipoPro of lstTipoProducto">
+        <mat-option [value]="tipoPro.id" >{{tipoPro.nombre}}</mat-option>
+      </div>
+    </mat-select>
+    </div>
+  </div>
+  
+  <mat-divider></mat-divider>
+
+  <div class="flex">
+    <div class="contenido" style="width: 100%; margin-bottom: 20px;">
+      <mat-form-field floatLabel="always">
+        <mat-label>Precio Mínimo</mat-label>
+        <input matInput type="number" placeholder="0" style="appearance: textfield" [(ngModel)]="precioMinimo"/>
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="flex">
+    <div class="contenido" style="width: 100%; margin-bottom: 20px;">
+      <mat-form-field floatLabel="always">
+        <mat-label>Precio Máximo</mat-label>
+        <input matInput type="number" placeholder="0" style="appearance: textfield" [(ngModel)]="precioMaximo"/>
+        <span matTextPrefix>$&nbsp;</span>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+</mat-dialog-content>
+<div class="flex">
+  <div class="contenido" style="width: 90%">
+    <mat-dialog-actions style="margin-bottom: 5px">
+      <button mat-button style="border-radius: 20px; color: black; width: 10px; margin-left: 2px; font-size: 13px; line-height: 1.3;"
+      (click)="precioMinimo=nan; precioMaximo=nan; tipo_producto=nan; rangoText=str; rangoNum=nan;" (click)="eliminarFiltros()">Eliminar Filtros</button>
+      <button mat-button mat-dialog-close style="border-radius: 10px; color: white; background-color: #423260; margin-left: 50px; font-size: 17px; padding: 15px;"
+      (click)="buscar()">Buscar</button>
+    </mat-dialog-actions>
+  </div>
+</div>

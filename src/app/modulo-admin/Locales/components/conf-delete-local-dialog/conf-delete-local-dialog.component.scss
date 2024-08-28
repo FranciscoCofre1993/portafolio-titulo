@@ -1,0 +1,40 @@
+::ng-deep .mat-mdc-dialog-container {
+    --mdc-dialog-container-shape: 15px !important;
+  }
+
+.dialog-title {
+    color:black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500; 
+    font-size: xx-large;
+}
+
+.dialog-content {
+    color:black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500; 
+    font-size: x-large;
+    
+  }
+    
+.cancel-button {
+    margin-left: 20px; 
+    background-color: lightgray; 
+    color: black;
+    border-radius: 10px; 
+    padding: 10px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+  }
+
+.acept-button {
+    margin-right: 20px; 
+    background-color: black; 
+    color: white;
+    border-radius: 10px; 
+    padding: 10px 10px;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: x-large;
+  }

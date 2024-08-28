@@ -1,0 +1,96 @@
+<ion-content class="content">
+  <div class="header">
+  </div>
+  <div class="fondo">
+    <div class="titulo">
+      <h1 style="color: #000">REGISTRAR NUEVO LOCAL</h1>
+    </div>
+
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Información básica</ng-template>
+          <div class="flex">
+            <div class="contenido">
+              <mat-form-field class="matFormField" floatLabel="always" >
+                <mat-label class="matLabel">Nombre del Local</mat-label>
+                <input matInput type="text" formControlName="nombre" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="contenido">
+              <mat-form-field class="matFormField" floatLabel="always">
+                <mat-label class="matLabel">Dirección</mat-label>
+                <input matInput type="text" formControlName="direccion" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="contenido">
+              <mat-form-field class="matFormField" floatLabel="always">
+                <mat-label class="matLabel">Teléfono</mat-label>
+                <input matInput type="text" formControlName="telefono" />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="buttonbox">
+            <button mat-stroked-button matStepperNext class="botonSiguiente">Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Detalles</ng-template>
+          <div class="flex">
+            <div class="contenido">
+              <mat-form-field class="matFormField" floatLabel="always">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput type="text" formControlName="descripcion" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="contenido">
+              <mat-form-field class="matFormField" floatLabel="always">
+                <mat-label>Tipo local</mat-label>
+                <mat-select formControlName="tipo_local">
+                  <mat-option *ngFor="let option of lstTipLocal" [value]="option.id">
+                    {{ option.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="contenido">
+              <label for="fileInput" class="custom-file-upload">Seleccionar imagen:</label>
+              <input id="fileInput" type="file" (change)="onFileSelected($event)" accept="image/*" />
+              <div class="imgprev">
+                <img *ngIf="selectedImage" [src]="selected64" alt="Imagen seleccionada">
+              </div>
+            </div>
+          </div>
+          <div class="buttonbox">
+            <button mat-stroked-button matStepperPrevious>Anterior</button>
+            <button mat-stroked-button matStepperNext class="botonSiguiente1">Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      
+      <mat-step>
+        <ng-template matStepLabel>Confirmación</ng-template>
+        <p style="color:black">¿Está seguro de que desea enviar esta información?</p>
+        <div class="buttonbox">
+          <button mat-stroked-button matStepperPrevious>Anterior</button>
+          <button mat-stroked-button class="botonAceptar" (click)="Agregar()">Agregar</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" (click)="goBack()">Cancelar</ion-button>
+    </div>
+  </div>
+</ion-content>

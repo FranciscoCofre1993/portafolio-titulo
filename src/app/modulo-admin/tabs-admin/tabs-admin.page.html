@@ -1,0 +1,30 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button id="popover-button">
+      <ion-icon name="settings" size="large">
+        <ion-popover trigger="popover-button" [dismissOnSelect]="true" size="cover" showBackdrop="false">
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-item [button]="true" [detail]="false" (click)="goListaUsers()">
+                  <ion-icon name="people" size="large" style="margin-right: 5px;"></ion-icon> Usuarios</ion-item>
+                <ion-item [button]="true" [detail]="false" (click)="goListaLocales()">
+                  <ion-icon name="storefront" size="large" style="margin-right: 5px;"></ion-icon> Locales</ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="changelog">
+      <ion-icon name="home" size="large"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="perfil">
+      <ion-icon name="person" size="large"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

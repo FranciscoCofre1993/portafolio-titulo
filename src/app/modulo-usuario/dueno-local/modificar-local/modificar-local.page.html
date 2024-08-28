@@ -1,0 +1,130 @@
+<ion-content class="content">
+  <div class="header">
+  </div>
+  <div class="fondo">
+    <br />
+    <div class="titulo">
+      <h1 style="color: #000">MODIFICAR LOCAL</h1>
+    </div>
+
+    <mat-tab-group>
+  <form (ngSubmit)="onSubmit()">
+    <mat-tab label="Datos"> 
+      <br>
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Nombre del Local: </mat-label>
+          <input matInput [(ngModel)]="local.nombre" name="nombre" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Direccion: </mat-label>
+          <input matInput [(ngModel)]="local.direccion" name="direccion" type="text" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Teléfono: </mat-label>
+          <input matInput [(ngModel)]="local.telefono" name="telefono" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="contenido">
+        <mat-form-field class="matFormField" floatLabel="always">
+          <mat-label class="matLabel" position="floating">Descripción: </mat-label>
+          <textarea matInput [(ngModel)]="local.descripcion" name="descripcion" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"> </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="buttonbox">
+      <ion-button class="bontonVolver" color="danger" [routerLink]="['/tabs/dueno-local/lista-locales']">Cancelar</ion-button>
+      <ion-button class="botonAceptar" color="tertiary" type="submit" (click)="onSubmit()">Actualizar</ion-button>
+    </div>
+  </mat-tab>
+  <mat-tab label="Imagenes"> 
+    <br>
+    <!-- IMAGEN Principal-->
+    <div class="flex">
+      <div class="contenido">
+        <label style="color:red">ADVERTENCIA!: </label>
+        <br>
+        <label style="color:red">Las imagenes eliminadas no se pueden recuperar.</label>
+        <br><br>
+        <label>Imagen del Local: </label>
+        <div class="imgprev" *ngIf="local.imagenes.length > 0">
+          <div *ngFor="let imagen of local.imagenes">
+            <div *ngIf="imagen.principal">
+            <img [src]="imagen.imagen">
+            <ion-button color="danger" (click)="removeImage(imagen)">Eliminar Imagen</ion-button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGENES SECUMNDARIAS-->
+    <div class="flex">
+      <div class="contenido">
+        <label>Imagenes secundarias del Local: </label>
+        <div class="imgprev" *ngIf="local.imagenes.length > 0">
+          <div *ngFor="let imagen of local.imagenes">
+            <div *ngIf="!imagen.principal">
+              <img [src]="imagen.imagen">
+              <ion-button color="danger" (click)="removeImage(imagen)">Eliminar Imagen</ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonbox2">
+      <ion-button class="bontonVolver2" color="danger" [routerLink]="['/tabs/dueno-local/lista-locales']">Cancelar</ion-button>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Nuevas imagenes"> 
+    <br>
+  <!-- IMAGEN Principal-->
+    <div class="flex">
+      <div class="contenido">
+          <label for="fileInput" class="custom-file-upload">Nueva Imagen del Local:</label>
+          <input id="fileInput" type="file" accept="image/*" (change)="onFileSelected($event)" />
+          <div class="imgprev">
+            <img *ngIf="selectedImage" [src]="imagen64" alt="Imagen seleccionada">
+          </div>
+      </div>
+    </div>
+
+  <!-- IMAGENES SECUMNDARIAS-->
+    <div class="flex">
+      <div class="contenido">
+          <label for="secondaryFileInput" class="custom-file-upload">Nueva Imagen secundaria del Local:</label>
+          <input id="secondaryFileInput" type="file" accept="image/*" (change)="agregarImagenesSecundarias($event)" />
+          <div class="imgprev" *ngFor="let img64 of imagenes64">
+            <div >
+            <img *ngIf="img64" [src]="img64" alt="Imagen seleccionada">
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="buttonbox3">
+      <ion-button class="bontonVolver" color="danger" [routerLink]="['/tabs/dueno-local/lista-locales']">Cancelar</ion-button>
+      <ion-button class="botonAceptar" color="tertiary" type="submit" (click)="onSubmit()">Actualizar</ion-button>
+    </div>
+  </mat-tab>
+  </form>
+</mat-tab-group>
+
+  
+
+</div>
+</ion-content>

@@ -1,0 +1,150 @@
+.content{
+    width: 100%; 
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.fondo {
+    width: 100%;
+    min-height: 75%;
+    background-color: #FFFFFF;
+    border-radius: 0px 35px 0px 0px;
+    position: relative; 
+    margin: auto;
+    margin-top: -30px;
+    padding: 20px;
+    z-index: 1; 
+}
+
+.fondo::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0);
+    top: -89px;
+    height: 90px;
+    width: 50px;
+    border-radius: 0px 50px 0px 0px;
+    box-shadow:5px -30px 0 0 rgb(255, 255, 255) ;
+    //margin-left: 85%;
+    left: 0%;
+    rotate: 180deg;
+}
+  
+  .header {
+    background-image: url(../../../../assets/background/bgmapamorado.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 170px; 
+}
+
+.contenido{
+    color: black; 
+    margin: auto; 
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contenido input{
+    appearance: textfield;
+}
+
+.contenido ion-item{
+    width: 213px;
+    --background: white;
+    --placeholder-color: black;
+    --color: black; 
+}
+
+.flex{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    color: black; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 500; 
+    font-size: xx-large; 
+    text-align: center;
+}
+
+.buttonbox{
+    width: 100%; 
+    display: flex;
+    margin-top: 55px;
+    padding: 10px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.buttonbox2{
+    width: 100%; 
+    display: flex;
+    margin-top: 55px;
+    padding: 10px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.buttonbox3{
+    width: 100%; 
+    display: flex;
+    margin-top: 55px;
+    padding: 10px;
+    justify-content: center;
+    gap: 50px;
+}
+
+.bontonVolver2 {
+    margin-right: 180px;
+}
+
+ion-button {
+    --border-radius: 50px;
+    filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));
+  }
+
+.matFormField
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    border-radius: 50px !important;
+    width: 288px; filter: drop-shadow(5px 5px 5px rgb(139, 139, 139));
+  }
+
+input[type="file"] {
+    display: none;
+  }
+  
+.custom-file-upload {
+    margin-top: 20px;
+    border: 1px solid #0d0d0574;
+    border-radius: 50px;
+    background-color: white;
+    display: inline-block;
+    padding: 6px 40px;
+    cursor: pointer; 
+    text-align: center;
+    min-width: 320px;
+}
+
+.custom-file-upload:active,
+.custom-file-upload:focus {
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+.imgprev {
+    margin-top: 20px;
+    text-align: center; 
+}
+
+.imgprev img {
+    max-width: 60%;
+    height: auto; 
+    border-radius: 8px;
+}
+
+::ng-deep .mat-mdc-tab-header-pagination {
+    display: none !important;
+  }

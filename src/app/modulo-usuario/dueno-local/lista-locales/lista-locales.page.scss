@@ -1,0 +1,212 @@
+.content{
+    height: 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url(../../../../assets/background/bgfondo.jpg) !important;
+  }
+  
+  .fondo {
+      width: 100%;
+      min-height: 75%;
+      border-radius: 35px 35px 0px 0px;
+      position: relative; 
+      margin: auto;
+      padding: 20px;
+      background-color: #ffffff2f;
+  }
+  
+  .titulo{
+    color: black; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 500; 
+    font-size: xx-large; 
+    text-align: center;
+  }
+  
+  h1{
+    font-size: 24px;
+  }
+  
+  .card{
+    overflow: hidden;
+    height: 80%;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.541));
+  }
+  
+  .card-image {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .img {
+      border-radius: 16px;
+  }
+  
+  .infoLocal {
+      display: flex;
+      align-items: center; 
+    }
+    
+  .content-container {
+      display: flex;
+      align-items: center; 
+      width: 100%;
+    }
+    
+  .content-left {
+      flex-grow: 1;
+    }
+    
+  .divider {
+      width: 1px;
+      height: 50px; 
+      background-color: black; 
+      margin: 25px;
+    }
+    
+  .content-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      justify-content: flex-end;
+     
+    }
+  
+  .rounded-button {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #773dd4;
+    }
+  
+  .descripcion {
+      max-width: 200px;
+      max-height: 3.6em; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.8; 
+      white-space: nowrap;
+      color: black
+    }
+  
+  #btnEliminar{
+      position: absolute;
+      top: 10px;
+      right: 13px;
+      cursor: pointer;
+      font-size: 24px;
+      background-color: red;
+      border-radius: 50%;  
+      padding: 5px;
+  }
+  
+  #btnAgregarProducto{
+      position: absolute;
+      bottom: 3px;
+      right: 13px;
+      cursor: pointer;
+      font-size: 24px;
+      margin-bottom: 120px;
+      background-color: green;
+      border-radius: 50%;  
+      padding: 5px;
+  }
+  
+  @media (max-width: 768px) {
+      .card-content {
+          flex-direction: column;
+          align-items: stretch;
+          position:relative;
+      }
+      .card-image {
+          justify-content: center;
+          margin-bottom: 10px;
+      }
+      .content-left {
+          padding-right: 0;
+          width: 100%;
+      }
+      .divider {
+          width: 1px;
+          height: 50px; 
+          background-color: black; 
+          margin: 25px;
+        }
+      .content-right {
+          width: 100%;
+          justify-content: flex-end;
+          left: 0%;
+          position: absolute;
+      }
+      .descripcion {
+          max-width: 200px;
+          max-height: 3.6em; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.8; 
+          white-space: nowrap;
+          color: black
+        }
+  }
+  
+  ion-searchbar.custom {
+    --background: #ffffff;
+    --color: #000000;
+    --placeholder-color: #000000;
+    --icon-color: #000000;
+    --clear-button-color: #737373;
+    --border-radius: 30px;
+  }
+
+  on-fab-button[data-desc] {
+    position: relative;
+  }
+  
+  ion-fab-button[data-desc]::after {
+    position: absolute;
+    content: attr(data-desc);
+    z-index: 1;
+    left: 43px;
+    bottom: 4px;
+    background-color: white;
+    padding: 9px;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 3px 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+  }
+  
+  .app-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 99;
+  }
+  
+  .app-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  ion-fab {
+    z-index: 100;
+  }
+  
+  ion-fab-list.fab-list-open {
+    display: block !important;
+  }
+  

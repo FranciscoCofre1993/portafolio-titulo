@@ -1,0 +1,35 @@
+ion-tab-bar, ion-tab-button{
+  background-color: #000000;
+  --ion-tab-bar-color-selected: rgb(89, 135, 161);
+  --ripple-color: gray;
+  --ion-tab-bar-color: rgb(255, 255, 255);
+}
+
+ion-icon{
+  color: rgb(224, 224, 224);
+}
+
+
+.list-md{
+  background:black;
+  color:white;
+  --ion-background-color:black;
+  --box-shadow:black;
+}
+
+.md.hydrated{
+  --ion-background-color: black;
+}
+
+ion-item{
+  --background:black;
+  color:white;
+  --color:white;
+  --background-color:black;
+  --border-color:black;
+}
+
+ion-content{
+  --background:black;
+  background-color: black;
+}

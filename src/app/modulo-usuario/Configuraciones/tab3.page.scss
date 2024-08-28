@@ -1,0 +1,32 @@
+ion-content{
+    --ion-background-color:#FFF7F4 ;
+}
+
+.contenido{
+    color: black; 
+    margin: auto; 
+    margin-top: 10px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 5px rgb(170, 170, 170));
+}
+
+.flex{
+    display:flex;
+}
+
+ion-button{
+    --background:#423260;
+    --border-radius: 50px;
+}
+
+.btnSettings{
+    --background: #ffffff00;
+    color: black;
+    scale: (1.5);
+    --ripple-color: #00000000;
+    margin-top: 10px;
+}
+
+.btnRegister::part(native){
+    color: black;
+}
